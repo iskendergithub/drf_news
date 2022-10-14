@@ -21,14 +21,6 @@ def news_list_view(request):
     return Response(serializer.data)
 
 
-@api_view(['GET'])
-def news_detail_view(request, id):
-    news_list = News.objects.get(id=id)
-    serializer = NewsSeriallizer(news_list, many=False)
-
-    return Response(serializer.data)
-
-
 @api_view(['POST'])
 def news_create_view(request):
     serializer = NewsSeriallizer(data=request.data)
