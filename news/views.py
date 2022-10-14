@@ -33,7 +33,7 @@ def news_create_view(request):
 @api_view(['POST'])
 def news_update_view(request, id):
     news_list = News.objects.get(id=id)
-    serializer = NewsSeriallizer(instance=task, data=request.data)
+    serializer = NewsSeriallizer(instance=news_list, data=request.data)
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)

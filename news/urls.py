@@ -11,6 +11,6 @@ urlpatterns = [
     path('', my_news_view),
     path('news/', news_list_view),
     path('news-create/', news_create_view),
-    path('news-update/', news_update_view),
-    path('news-delete/', news_delete_view),
+    path('news-update/<int:id>/', news_update_view),
+    path('news-delete/<int:id>/', news_delete_view),
 ]
